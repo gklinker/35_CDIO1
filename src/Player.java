@@ -8,6 +8,11 @@ public class Player {
         this.playerName = playerName;
     }
 
+   public int addToScore(Dice die1, Dice die2){
+        score = score + die1.getFaceValue()+die2.getFaceValue();
+        return score;
+   }
+
    public void turnSwitch(Player playerOne){
         isTurn = false;
         playerOne.isTurn = true;

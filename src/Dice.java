@@ -1,24 +1,34 @@
 import java.util.Random;
 public class Dice {
-    private int die1;
-    private int die2;
+    private int faceValue;
     private int sum;
     private int lastSum;
-    Random random = new Random();
+    private Random random = new Random();
 
-
+    // Throws one die and generates a value between 1-6
     public void roll(){
-        die1 = random.nextInt(6)+1;
-        die2 = random.nextInt(6)+1;
-        sum = die1 + die2;
+        this.faceValue = random.nextInt(6)+1;
+    }
+
+    // Returns the face value of the dice
+    public int getFaceValue(){
+        return this.faceValue;
+    }
+
+    public boolean equals(Dice another){
+        if (this.faceValue == another.faceValue){
+            return true;
+        }else
+            return false;
     }
 
     public void addPoints(Player player){
-        player.setScore(player.getScore() + getSum());
+        player.setScore(player.getScore() + sum);
     }
 
-    public int getSum(){
-        return sum;
+    public int getSum(Dice another){
+        this.sum = this.faceValue + another.faceValue;
+        return this.sum;
     }
 
     public boolean dieEquals(){
