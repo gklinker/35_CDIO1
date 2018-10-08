@@ -29,7 +29,7 @@ public class Main{
                     if(die1.dieEquals())
                         System.out.println("Two of a kind gives an extra round");
                     else
-                    player1.turnSwitch(player2);
+                        player1.turnSwitch(player2);
                 } else if (player2.getIsTurn()) {
                     die1.roll();
                     die2.roll();
