@@ -22,9 +22,6 @@ public class Dice {
             return false;
     }
 
-    public void addPoints(Player player){
-        player.setScore(player.getScore() + sum);
-    }
 
     public int getSum(Dice another){
         this.sum = this.faceValue + another.faceValue;
