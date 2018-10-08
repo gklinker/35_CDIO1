@@ -19,8 +19,9 @@ public class Main{
 
                 else if (player1.getIsTurn()) {
                     die1.roll();
-                    System.out.println(die1.getSum(die2));
-                    die1.addPoints(player1);
+                    die2.roll();
+                    System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
+                    player1.addToScore(die1, die2);
                     if(die1.dieEquals() && die1.getSum(die2)==2)
                         player1.setScore(0);
                     if(die1.dieEquals())
@@ -29,8 +30,9 @@ public class Main{
                     player1.turnSwitch(player2);
                 } else if (player2.getIsTurn()) {
                     die1.roll();
-                    System.out.println(die1.getSum(die2));
-                    die1.addPoints(player2);
+                    die2.roll();
+                    System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
+                    player2.addToScore(die1, die2);
                     if(die1.dieEquals() && die1.getSum(die2)==2)
                         player2.setScore(0);
                     if(die1.dieEquals())
