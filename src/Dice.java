@@ -15,6 +15,7 @@ public class Dice {
         return this.faceValue;
     }
 
+    // Compares the face value of two dice objects
     public boolean equals(Dice another){
         if (this.faceValue == another.faceValue){
             return true;
@@ -22,12 +23,13 @@ public class Dice {
             return false;
     }
 
-
+    // Sums the face value of two dice objects
     public int getSum(Dice another){
         this.sum = this.faceValue + another.faceValue;
         return this.sum;
     }
 
+    // Method for two times 6 in a row
     public boolean dieEquals(){
         if(sum == lastSum)
             return true;
