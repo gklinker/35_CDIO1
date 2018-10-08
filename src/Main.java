@@ -2,6 +2,7 @@ import java.util.Scanner;
 public class Main{
     static boolean play = true;
     public static void main(String[] args) {
+
         Player player1 = new Player("Bob");
         Player player2 = new Player("Bobby");
         Dice die1 = new Dice();
@@ -9,9 +10,10 @@ public class Main{
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to IOOuterActive dice game");
         System.out.println("To play, press 1 and enter");
-        player1.setTurn(true);
-        while (play) {
 
+        player1.setTurn(true);
+
+        while (play) {
             int input = scan.nextInt();
             if (input == 1) {
                 if (player1.getIsTurn() && player2.getIsTurn())
