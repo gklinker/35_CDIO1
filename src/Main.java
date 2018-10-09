@@ -10,6 +10,7 @@ public class Main{
         Scanner scan = new Scanner(System.in);
         System.out.println("Welcome to IOOuterActive dice game");
         System.out.println("To play, press 1 and enter");
+        System.out.println("Player 1 starts!");
 
         player1.setTurn(true);
 
@@ -22,7 +23,7 @@ public class Main{
                 else if (player1.getIsTurn()) {
                     die1.roll();
                     die2.roll();
-                    System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
+                    System.out.println("You rolled " + die1.getFaceValue() + " and " + die2.getFaceValue() + ", sum is " + die1.getSum(die2));
                     player1.addToScore(die1, die2);
                     if(die1.dieEquals() && die1.getSum(die2)==2)
                         player1.setScore(0);
@@ -33,7 +34,7 @@ public class Main{
                 } else if (player2.getIsTurn()) {
                     die1.roll();
                     die2.roll();
-                    System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
+                    System.out.println("You rolled " + die1.getFaceValue() + " and " + die2.getFaceValue() + ", sum is " + die1.getSum(die2));
                     player2.addToScore(die1, die2);
                     if(die1.dieEquals() && die1.getSum(die2)==2)
                         player2.setScore(0);
@@ -46,13 +47,14 @@ public class Main{
             }
             showScore(player1, player2);
             showWinner(player1, player2);
+            showTurn(player1, player2);
             if(input == 2)
                 System.out.println(player1.getIsTurn()+ " " +player2.getIsTurn() );
         }
     }
     public static void showScore(Player player1, Player player2){
-        System.out.println(player1.toString()+ " has "+ player1.getScore() +" points");
-        System.out.println(player2.toString()+ " has "+ player2.getScore() +" points");
+            System.out.println("Player 1: " + player1.toString()+ " has "+ player1.getScore() +" points");
+            System.out.println("Player 2: " + player2.toString()+ " has "+ player2.getScore() +" points");
     }
     public static void showWinner(Player player1, Player player2){
         if(player1.winGame()) {
@@ -63,6 +65,14 @@ public class Main{
             System.out.print(player2.toString() + " won the game");
             play = false;
         }
-
+    }
+    public static void showTurn(Player player1, Player player2){
+        if (play) {
+            if (player1.getIsTurn()) {
+                System.out.println("Player 1, you're next!");
+            } else if (player2.getIsTurn()) {
+                System.out.println("Player 2, you're next!");
+            }
+        }
     }
 }
