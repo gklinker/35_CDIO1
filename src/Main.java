@@ -3,15 +3,18 @@ public class Main{
     static boolean play = true;
     public static void main(String[] args) {
 
-        Player player1 = new Player("Bob");
-        Player player2 = new Player("Bobby");
+        System.out.println("Welcome to IOOuterActive dice game");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Player 1 please enter your name");
+        Player player1 = new Player(scan.next());
+        System.out.println("Player 2 please enter your name");
+        Player player2 = new Player(scan.next());
         Dice die1 = new Dice();
         Dice die2 = new Dice();
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Welcome to IOOuterActive dice game");
+
         System.out.println("To play, press 1 and enter");
 
-        System.out.println("Player 1 starts!");
+        System.out.println( "\n " + player1.toString() + " starts!");
 
         player1.setTurn(true);
 
@@ -79,9 +82,9 @@ public class Main{
     public static void showTurn(Player player1, Player player2){
         if (play) {
             if (player1.getIsTurn()) {
-                System.out.println("Player 1, you're next!");
+                System.out.println("\n " + player1.toString() + ", you're next!");
             } else if (player2.getIsTurn()) {
-                System.out.println("Player 2, you're next!");
+                System.out.println("\n " + player2.toString() + ", you're next!");
             }
         }
     }

@@ -22,6 +22,7 @@ public class Player {
         playerOne.isTurn = true;
     }
 
+    // Returns wheater a player have the turn ot not
     public boolean getIsTurn(){
         return isTurn;
     }
