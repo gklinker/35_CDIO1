@@ -1,4 +1,5 @@
 import java.util.Random;
+
 public class Dice {
     private int faceValue;
     private int sum;
