@@ -22,14 +22,15 @@ public class Player {
         playerOne.isTurn = true;
     }
 
+    public boolean getIsTurn(){
+        return isTurn;
+    }
 
     public void setTurn(boolean turn) {
         isTurn = turn;
     }
 
-    public boolean getIsTurn(){
-        return isTurn;
-    }
+
 
     public boolean winGame(){
        if(score>=winCon)

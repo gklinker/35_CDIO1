@@ -24,9 +24,9 @@ public class Main{
                     die2.roll();
                     System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
                     player1.addToScore(die1, die2);
-                    if(die1.dieEquals() && die1.getSum(die2)==2)
+                    if(die1.equals(die2) && die1.getSum(die2)==2)
                         player1.setScore(0);
-                    if(die1.dieEquals())
+                    if(die1.equals(die2))
                         System.out.println("Two of a kind gives an extra round");
                     else
                         player1.turnSwitch(player2);
@@ -35,9 +35,9 @@ public class Main{
                     die2.roll();
                     System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
                     player2.addToScore(die1, die2);
-                    if(die1.dieEquals() && die1.getSum(die2)==2)
+                    if(die1.equals(die2) && die1.getSum(die2)==2)
                         player2.setScore(0);
-                    if(die1.dieEquals())
+                    if(die1.equals(die2))
                         System.out.println("Two of a kind gives an extra round");
                     else
                         player2.turnSwitch(player1);
