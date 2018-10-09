@@ -29,20 +29,24 @@ public class Main{
                 if (player1.getIsTurn()) {
               
                     player1.addToScore(die1, die2);
-                    if(die1.equals(die2) && die1.getSum(die2)==2)
+                    if(die1.equals(die2) && die1.getSum(die2)==2) {
                         player1.setScore(0);
-                    if(die1.equals(die2))
-                        System.out.println("Two of a kind gives an extra round");
+                        System.out.println("Too bad! You rolled two 1s and you've lost all your points. You can roll again.");
+                    }
+                    else if(die1.equals(die2))
+                        System.out.println("Nice! Two of a kind gives an extra roll. Roll again!");
                     else
                         player1.turnSwitch(player2);
                 }
                 else if (player2.getIsTurn()) {
 
                     player2.addToScore(die1, die2);
-                    if(die1.equals(die2) && die1.getSum(die2)==2)
+                    if(die1.equals(die2) && die1.getSum(die2)==2) {
                         player2.setScore(0);
-                    if(die1.equals(die2))
-                        System.out.println("Two of a kind gives an extra round");
+                        System.out.println("Too bad! You rolled two 1s and you've lost all your points. You can roll again.");
+                    }
+                    else if(die1.equals(die2))
+                        System.out.println("Nice! Two of a kind gives an extra roll. Roll again!");
                     else
                         player2.turnSwitch(player1);
                 } else
@@ -50,6 +54,8 @@ public class Main{
             }
             showScore(player1, player2);
             showWinner(player1, player2);
+            showTurn(player1, player2);
+
 
             /*if(input == 2)
                 System.out.println(player1.getIsTurn()+ " " +player2.getIsTurn() );*/
