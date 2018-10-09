@@ -4,27 +4,33 @@ public class Player {
     private boolean isTurn;
     private String playerName;
 
-    Player(String playerName){
-        this.playerName = playerName;
+    // Constructor
+    public Player(String playerName){
+       this.playerName = playerName;
+       this.score = 0;
     }
 
-   public int addToScore(Dice die1, Dice die2){
+    // Adds the sum of two dice to a players score
+    public int addToScore(Dice die1, Dice die2){
         score = score + die1.getFaceValue()+die2.getFaceValue();
         return score;
-   }
+    }
 
-   public void turnSwitch(Player playerOne){
+    // Passes the turn to the next player
+    public void turnSwitch(Player playerOne){
         isTurn = false;
         playerOne.isTurn = true;
+    }
+
+    public boolean getIsTurn(){
+        return isTurn;
     }
 
     public void setTurn(boolean turn) {
         isTurn = turn;
     }
 
-    public boolean getIsTurn(){
-        return isTurn;
-    }
+
 
     public boolean winGame(){
        if(score>=winCon)
