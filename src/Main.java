@@ -24,7 +24,7 @@ public class Main{
 
                 die1.roll();
                 die2.roll();
-                System.out.println(die1.getFaceValue() + " and " + die2.getFaceValue());
+                System.out.println("You rolled " + die1.getFaceValue() + " and " + die2.getFaceValue() + ", sum is " + die1.getSum(die2));
 
                 if (player1.getIsTurn()) {
               
