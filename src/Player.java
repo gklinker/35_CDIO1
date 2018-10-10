@@ -49,15 +49,8 @@ public class Player {
         return score;
     }
 
-    public int getWinCon(){         // NEVER UESD
-        return winCon;
-    }
 
     public void setScore(int newScore){
         score = newScore;
-    }
-
-    public void setWinCon(int newWinCon){           // NEVER USED
-        winCon = newWinCon;
     }
 }

@@ -16,7 +16,6 @@ public class Main{
         Dice die2 = new Dice();
 
         System.out.println("To play, press 1 and enter");
-
         System.out.println( "\n " + player1.toString() + " starts!");
 
         player1.setTurn(true);

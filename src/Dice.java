@@ -3,7 +3,6 @@ import java.util.Random;
 public class Dice {
     private int faceValue;
     private int sum;
-    private int lastSum;        // NEVER USED
     private Random random = new Random();
 
     /** Throws one die and generates a value between 1-6 */
@@ -30,11 +29,5 @@ public class Dice {
         return this.sum;
     }
 
-    /** Method for two times 6 in a row, NEVER USED */
-    public boolean dieEquals(){
-        if(sum == lastSum)
-            return true;
-        else
-            return false;
-    }
+
 }
