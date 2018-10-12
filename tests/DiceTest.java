@@ -25,7 +25,7 @@ class DiceTest {
     // This test the same as our group's answer of the earlier assignment this week.
     // <expected result> all rolls are spread evenly and fairly within a 4% margin of error.
     // <actual result> successful spread of values.
-    @RepeatedTest(500)
+    @Test
     void testFairness() {
         int ones, twos, threes, fours, fives, sixes;
         ones = twos = threes = fours = fives = sixes = 0;
@@ -73,9 +73,10 @@ class DiceTest {
     //tests the chances of rolling doubles
     //using 2 fair dice, the chances of rolling doubles should be around 16%
     //I'm expecting between 9000 and 11000 rolls are doubles if I roll the dice 60000 times.
+    //test repeated 100 times to lessen the chances of luck.
     //<expected result> between 9000 and 11000 rolls are doubles
-    //<actual result>
-    @RepeatedTest(100)
+    //<actual result> between 9000 and 11000 rolls are doubles
+    @Test
     void testDoubleFairness () {
         int doubles, singles;
         doubles = singles = 0;
