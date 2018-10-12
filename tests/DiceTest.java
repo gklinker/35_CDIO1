@@ -10,10 +10,10 @@ class DiceTest {
 
 
 
-    @RepeatedTest(1000)
     /** test if the roll() method generates a random number between 1 and 6, repeated 1000 times to make sure */
     // <expected result> all tests return true
     // <actual result> all tests returned true
+    @RepeatedTest(1000)
     void testRoll() {
         testDice.roll();
 
@@ -70,6 +70,33 @@ class DiceTest {
 
     }
 
+    //tests the chances of rolling doubles
+    //using 2 fair dice, the chances of rolling doubles should be around 16%
+    //I'm expecting between 9000 and 11000 rolls are doubles if I roll the dice 60000 times.
+    //<expected result> between 9000 and 11000 rolls are doubles
+    //<actual result>
+    @RepeatedTest(100)
+    void testDoubleFairness () {
+        int doubles, singles;
+        doubles = singles = 0;
+
+        for(int i = 1; i < 60000; i++) {
+            testDice.roll();
+            testDice2.roll();
+
+            if(testDice.getFaceValue() == testDice2.getFaceValue()) {
+                doubles++;
+            }
+            else {
+                singles++;
+            }
+        }
+
+        assertTrue((doubles >= 9000) && (doubles <= 11000));
+
+
+    }
+
     //test of the equals method. Uses 2 tests, one for equal rolls, the other for unequal rolls.
     //FIRST TEST
     //<summary> Testing testDice faceValue with itself
@@ -80,7 +107,7 @@ class DiceTest {
     //<expected result> returns false
     //<actual result> returned false
     @Test
-    void equals() {
+    void testEquals() {
 
         //test 1
         testDice.roll();
@@ -99,7 +126,7 @@ class DiceTest {
     //<expected result> the sum of the faceValues of testDice and testDice2
     //<actual result> the sum of the faceValues of testDice and testDice2
     @Test
-    void getSum() {
+    void testGetSum() {
         testDice.roll();
         testDice2.roll();
         assertEquals(testDice.getSum(testDice2), testDice.getFaceValue() + testDice2.getFaceValue());
