@@ -13,7 +13,7 @@ class PlayerTest {
     //<expected result> testPlayers getScore() is equal to the sum of faceValue of both testdice
     //<actual result>
     @Test
-    void addToScore() {
+    void testAddToScore() {
         testDice.roll();
         testDice2.roll();
         testPlayer.addToScore(testDice, testDice2);
@@ -24,7 +24,7 @@ class PlayerTest {
     //<expected result> the testPlayer1 and testPlayer2 turns will be switched when I call turnSwitch() method
     //<actual result> the IsTurn bool attached to testPlayer1 and testPlayer2 changes as intended when turnSwitch is called.
     @Test
-    void turnSwitch() {
+    void testTurnSwitch() {
         testPlayer.setTurn(true);
         assertTrue(testPlayer.getIsTurn());
         assertFalse(testPlayer2.getIsTurn());
@@ -41,7 +41,7 @@ class PlayerTest {
     //<expected result> returns true if a player has over 40 points.
     //<actual result> returns true if a player has over 40 points, returns false if less.
     @Test
-    void winGame() {
+    void testWinGame() {
         testPlayer.setScore(40);
         assertTrue(testPlayer.winGame());
         testPlayer2.setScore(30);
